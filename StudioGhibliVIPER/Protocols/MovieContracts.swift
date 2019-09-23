@@ -26,7 +26,7 @@ protocol IMovieInteractorDelegate: class {
 }
 
 protocol IMovieWireframe: class {
-    static func createMovieController() -> UIViewController
+    func createMovieController() -> UIViewController
     func pushToMovieDetailScreen(navigationController: UINavigationController)
 }
 

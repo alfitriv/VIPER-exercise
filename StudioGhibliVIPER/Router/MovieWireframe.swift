@@ -12,29 +12,31 @@ import UIKit
 class MovieWireframe: IMovieWireframe {
     //weak var controller: ViewController?
     
-    class func createMovieController() -> UIViewController {
-        let view = ViewController()
-        let interactor = MovieInteractor()
-        let presenter = MoviePresenter()
-        let wireframe = MovieWireframe()
+    func createMovieController() -> UIViewController {
+        let view = UIStoryboard(name:"Main",bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as? ViewController
         let movieService = MovieService()
+        let interactor = MovieInteractor(movieService: movieService)
+        let presenter = MoviePresenter(
+            view: view,
+            interactor: interactor,
+            router: self
+        )
         
-        
-        view.presenter = presenter
-        presenter.view = view
-        presenter.router = wireframe
-        presenter.interactor = interactor
+        view?.presenter = presenter
+        interactor.delegate = presenter
+//        presenter.view = view
+//        presenter.router = wireframe
+//        presenter.interactor = interactor
         //interactor.presenter = presenter
-        interactor.movieService = movieService
+//        interactor.movieService = movieService
         //self.controller = view
-        return view
+        return view!
     }
     
     func pushToMovieDetailScreen(navigationController: UINavigationController) {
         
         
     }
-    
 }
 
 

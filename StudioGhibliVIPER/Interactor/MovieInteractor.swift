@@ -10,17 +10,21 @@ import Foundation
 
 class MovieInteractor: IMovieInteractor {
     var response: Movie?
-    var movieService: IMovieService!
-    weak var delegate: IMovieInteractorDelegate!
+    var movieService: IMovieService
+    weak var delegate: IMovieInteractorDelegate?
+    
+    init(movieService: IMovieService) {
+        self.movieService = movieService
+    }
     
     func fetchMovies() {
         
         self.movieService.getMoviesList(successHandler: { [weak self] (movies) in
             
-        self?.delegate.movieInteractorDidSuccessToFetchMovies(movies: movies)
+        self?.delegate?.movieInteractorDidSuccessToFetchMovies(movies: movies)
             
         }) { (error) in
-            self.delegate.movieInteractorDidFailToFetchMovies()
+            self.delegate?.movieInteractorDidFailToFetchMovies()
         }
     }
     

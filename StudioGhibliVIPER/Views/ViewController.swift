@@ -11,16 +11,18 @@ import UIKit
 class ViewController: UITableViewController {
     
     var presenter: IMoviePresenter?
-    
-//    var movies: [Movie] = [] {
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
+    var movies: [Movie]?
 
+//    func setData(movies: [Movie]) {
+//        self.movies = movies
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.startFetchingMovies()
+//        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieTableViewCell")
+        
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,9 +30,9 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as? MovieTableViewCell)!
-        cell.updateData(model: ((presenter?.movies[indexPath.row])!))
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as? MovieTableViewCell
+        cell!.updateData(model: ((presenter?.movies[indexPath.row])!))
+        return cell!
     }
     
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
