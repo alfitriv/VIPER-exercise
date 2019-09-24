@@ -13,15 +13,9 @@ class ViewController: UITableViewController {
     var presenter: IMoviePresenter?
     var movies: [Movie]?
 
-//    func setData(movies: [Movie]) {
-//        self.movies = movies
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.startFetchingMovies()
-//        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieTableViewCell")
-        
-        
         
     }
     
@@ -34,18 +28,6 @@ class ViewController: UITableViewController {
         cell!.updateData(model: ((presenter?.movies[indexPath.row])!))
         return cell!
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        let movieData = movies[indexPath.row]
-//
-//        let movieDetailVC = MovieDetailViewController.init(nibName: "MovieDetailViewController", bundle: nil)
-//
-//        movieDetailVC.movieData = movieData
-//        
-//        navigationController?.pushViewController(movieDetailVC, animated: true)
-//
-//    }
 
 }
 
@@ -53,9 +35,6 @@ extension ViewController: IMovieView {
     func showMovie(movies: [Movie]) {
         tableView.reloadData()
     }
-    
-    
-    
-    
+
 }
 
