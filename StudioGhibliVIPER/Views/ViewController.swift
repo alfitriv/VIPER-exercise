@@ -15,7 +15,11 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Ghibli"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
         presenter?.startFetchingMovies()
+        
         
     }
     

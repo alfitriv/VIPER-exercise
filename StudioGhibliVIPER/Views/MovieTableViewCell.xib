@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="81" id="YZQ-ua-jZM" customClass="MovieTableViewCell" customModule="StudioGhibliVIPER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZQ-ua-jZM" id="Tto-B0-BYr">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="96h-T6-6iK">
+                        <rect key="frame" x="16" y="5" width="382" height="70"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studio_ghibli" translatesAutoresizingMaskIntoConstraints="NO" id="32p-Yb-lPj">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Esa-bo-ZER"/>
+                                    <constraint firstAttribute="height" constant="70" id="Ged-it-Jra"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UOy-ii-Vg7">
+                                <rect key="frame" x="108" y="0.0" width="274" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY6-uV-Jam">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="41.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sE-xK-g0B">
+                                        <rect key="frame" x="0.0" y="49.5" width="274" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="96h-T6-6iK" secondAttribute="trailing" constant="16" id="CqK-5b-HUc"/>
+                    <constraint firstItem="96h-T6-6iK" firstAttribute="top" secondItem="Tto-B0-BYr" secondAttribute="top" constant="5" id="bNQ-Hd-NYv"/>
+                    <constraint firstAttribute="bottom" secondItem="96h-T6-6iK" secondAttribute="bottom" constant="5.5" id="oWx-6v-BnL"/>
+                    <constraint firstItem="96h-T6-6iK" firstAttribute="leading" secondItem="Tto-B0-BYr" secondAttribute="leading" constant="16" id="sIc-wi-t2q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="5sE-xK-g0B" id="kiA-do-QQa"/>
+                <outlet property="photoView" destination="32p-Yb-lPj" id="QaP-3g-VaP"/>
+                <outlet property="titleLabel" destination="SY6-uV-Jam" id="5RZ-Ue-IHy"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="studio_ghibli" width="329" height="153"/>
+    </resources>
+</document>

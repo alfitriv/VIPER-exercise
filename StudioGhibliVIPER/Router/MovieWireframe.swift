@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 
 class MovieWireframe: IMovieWireframe {
-    //weak var controller: ViewController?
     
     func createMovieController() -> UIViewController {
-        let view = UIStoryboard(name:"Main",bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        let view = ViewController(style: .plain)
         let movieService = MovieService()
         let interactor = MovieInteractor(movieService: movieService)
         let presenter = MoviePresenter(
@@ -22,15 +21,10 @@ class MovieWireframe: IMovieWireframe {
             router: self
         )
         
-        view?.presenter = presenter
+        view.presenter = presenter
         interactor.delegate = presenter
-//        presenter.view = view
-//        presenter.router = wireframe
-//        presenter.interactor = interactor
-        //interactor.presenter = presenter
-//        interactor.movieService = movieService
-        //self.controller = view
-        return view!
+
+        return view
     }
     
     func pushToMovieDetailScreen(navigationController: UINavigationController) {

@@ -34,7 +34,6 @@ class MoviePresenter: IMoviePresenter {
 
 extension MoviePresenter: IMovieInteractorDelegate {
     func movieInteractorDidSuccessToFetchMovies(movies: [Movie]) {
-//        var movies: [Movie] = []
         self.movies = movies
         view?.showMovie(movies: movies)
     }

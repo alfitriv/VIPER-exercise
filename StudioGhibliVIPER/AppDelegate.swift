@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let wireframe = MovieWireframe()
         let movies = wireframe.createMovieController()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = movies
+        window?.rootViewController = UINavigationController(rootViewController: movies)
         window?.makeKeyAndVisible()
         
         return true
